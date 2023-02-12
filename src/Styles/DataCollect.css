@@ -139,3 +139,14 @@ input[type="radio"]:checked + label {
   width: 35%;
   margin-left: 32%;
 }
+.error {
+  color: rgba(255, 0, 0, 0.762);
+}
+.response {
+  font-weight: 700;
+  font-size: 20px;
+  margin: auto;
+  text-align: center;
+  color: #8b695d;
+  text-shadow: 1px 1px 20px black;
+}
