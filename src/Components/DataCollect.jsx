@@ -15,7 +15,7 @@ function DataCollect() {
     queCategory: "",
   });
   const [renderview, setRender] = useState(0); //thannks after submission
-  const [errors, setError] = useState(false); //eroor if mepty field
+  const [errors, setError] = useState(false); //eroor if empty field
 
   //handling onchange of inputBox
   const handleData = (e) => {
@@ -42,16 +42,17 @@ function DataCollect() {
     }
     try {
       //"" : url goes here
-      const res = await axios.post("", {
+      const res = await axios.post("https://codechef-wce-qb.onrender.com/api/v1/question/create", {
         email: email,
-        queTitle: queTitle,
-        queTopic: queTopic,
-        queLink: queLink,
-        queCategory: queCategory,
+        title: queTitle,
+        topic: queTopic,
+        link: queLink,
+        difficulty: queCategory,
       });
-      //console.log(res.userdata);
+      console.log(res.data);
     } catch (error) {
       console.log(error.response);
+      setError(error.message);
     }
   };
 
